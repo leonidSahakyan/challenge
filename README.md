@@ -1,36 +1,30 @@
-# Model Management back end challenge
+# Project setup instruction
 
-Please read the following instructions carefully.
+git clone https://github.com/leonidSahakyan/challenge.git
+composer install
+rename (.env.example) to (.env) -> set database name and user
+php artisan passport:install
+php artisan key:generate
+php artisan migrate
+php artisan serve
 
-**Your goal is to set up an application which enables access to a restricted API**
+you can see application in http://127.0.0.1:8000/
+and API end point is http://127.0.0.1:8000/api/user
+you need send token in request body in json format
+{
+  "token": "9b44c1e81378d19fc08d443cd17ba9df450bbc792e128470d49be6ff170f691fcaa73c40303d0518"
+}
 
-# Scenario
+result:
 
-We want to give access to our internal API.
-
-- The user shall be able to:
-  - Register/login with an email address and password
-  - Create/list their API tokens
-  - Create an endpoint which is restricted, only accessible using a token.
-  - The endpoint should output in JSON all users email addresses and tokens.
-
-There is no requirement to code any front-end to the restricted endpoint. We can test this with Curl/Postman.
-
-## Technology requirements
-
-**Laravel** is a mandatory requirement. It's your choice whether to use a Laravel package to assist you or not.
-
-Apart from this you can use any front-end framework, task runners and build processors to enhance the UX.
-
-# Setup
-
-- Download a copy of this repository
-- Provide a a link to your finished solution on Github/Bitbucket
-- Include a readme for all setup/installation instructions to run this locally
-
-# Time limit
-
-There is no hard time limit for this coding challenge, however we recommended spending max a few hours on this. We appreciate all the effort put into the challenge, we also do not want to take up too much of your time!
-
-Good luck,
-Model Management
+[
+    {
+        "email": "test@gmail.com"
+    },
+    {
+        "email": "leonid.sahakyan@gmail.com",
+        "tokens": [
+            "9b44c1e81378d19fc08d443cd17ba9df450bbc792e128470d49be6ff170f691fcaa73c40303d0518"
+        ]
+    }
+]
