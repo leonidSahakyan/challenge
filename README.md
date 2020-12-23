@@ -2,18 +2,14 @@
 
 git clone https://github.com/leonidSahakyan/challenge.git
 
+```bash
 composer install
-
 rename (.env.example) to (.env) -> set database name and user
-
 php artisan passport:install
-
 php artisan key:generate
-
 php artisan migrate
-
 php artisan serve
-
+```
 you can see application in http://127.0.0.1:8000/
 and API end point is http://127.0.0.1:8000/api/user
 you need send token in request body in json format
@@ -23,7 +19,6 @@ you need send token in request body in json format
 }
 
 result:
-
 [
     {
         "email": "test@gmail.com"
